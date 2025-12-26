@@ -1,0 +1,362 @@
+:root {
+  --primary-color: #4caf50;
+  --secondary-color: #ff9800;
+  --background-color: #f4f6f8;
+  --text-color: #333;
+  --white: #ffffff;
+  --border-radius: 8px;
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-weight: 600;
+}
+
+/* =====================
+   Global Reset
+===================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* =====================
+   Header
+===================== */
+.header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.header a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* =====================
+   Navigation
+===================== */
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  background: transparent;
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: var(--font-weight);
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* =====================
+   Layout Container
+===================== */
+
+.App .section-title {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: -1rem;
+  font-size: 1.75rem;
+}
+
+.App p {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+}
+
+.form-container {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================
+   Headings
+===================== */
+.form-container h2 {
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+/* =====================
+   Form
+===================== */
+.form {
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  width: 100%;
+}
+
+/* =====================
+   Inputs
+===================== */
+.input-field,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  background-color: var(--white);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.25);
+}
+
+/* =====================
+   Buttons
+===================== */
+.submit-btn,
+.close-btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.85rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover,
+.close-btn:hover {
+  background-color: #3e8e41;
+}
+
+.submit-btn:active,
+.close-btn:active {
+  transform: scale(0.97);
+}
+
+.submit-btn:disabled {
+  background-color: #9ccc9c;
+  cursor: not-allowed;
+}
+
+/* =====================
+   Messages
+===================== */
+.message {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+/* =====================
+   Modal
+===================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--white);
+  padding: 1.75rem;
+  border-radius: var(--border-radius);
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================
+   User Table
+===================== */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.user-table th,
+.user-table td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+}
+
+.user-table th {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* =====================
+   Action Buttons
+===================== */
+.action-cell {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.action-btn {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Edit */
+.edit-btn {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #1976d2;
+}
+
+/* Delete */
+.delete-btn {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+/* =====================
+   Tablet
+===================== */
+@media (max-width: 768px) {
+  .form-container {
+    margin: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .form {
+    max-width: 100%;
+  }
+
+  .user-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .user-table th,
+  .user-table td {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
+
+/* =====================
+   Mobile
+===================== */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: left;
+  }
+
+  .form-container {
+    margin: 1rem;
+    padding: 1.25rem;
+  }
+
+  .submit-btn,
+  .close-btn {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  /* Swipe hint for tables */
+  .user-table::after {
+    content: "← Swipe to scroll →";
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #777;
+    padding: 0.5rem 0;
+  }
+}
